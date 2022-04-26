@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>Architecture - Ink Runtime Specification: 1.0.0</title>
+        <title>Lists - Ink Runtime Specification: 1.0.0</title>
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/font-awesome.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
@@ -36,12 +36,12 @@
                             <li class="navitem">
                                 <a href=".." class="nav-link">Ink Runtime Specification</a>
                             </li>
-                            <li class="dropdown active">
+                            <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">General Documentation <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="./" class="dropdown-item active">Architecture</a>
+    <a href="../architecture/" class="dropdown-item">Architecture</a>
 </li>
                                     
 <li>
@@ -49,7 +49,7 @@
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Components <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
@@ -58,7 +58,7 @@
 </li>
                                     
 <li>
-    <a href="../lists/" class="dropdown-item">Lists</a>
+    <a href="./" class="dropdown-item active">Lists</a>
 </li>
                                     
 <li>
@@ -101,12 +101,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href=".." class="nav-link">
+                                <a rel="prev" href="../diverts/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../glossary/" class="nav-link">
+                                <a rel="next" href="../variables/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -128,8 +128,20 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#architecture" class="nav-link">Architecture</a>
+            <li class="nav-item" data-level="1"><a href="#lists" class="nav-link">Lists</a>
               <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#using-list-listitem-in-clients" class="nav-link">Using List &amp; ListItem in clients</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#list" class="nav-link">List</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#listitem" class="nav-link">ListItem</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -137,19 +149,22 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="architecture">Architecture</h1>
-<p><em>High-level explanation of the runtime architecture</em></p>
-<p>The general form of a compiled JSON story is an object that <em>must</em> contain :</p>
-<p><code>inkVersion</code> : number : the ink version number. Current version is <code>20</code>.</p>
-<p><code>root</code> : array : the main story <a href="../glossary/#container">Container</a></p>
-<p><code>listDef</code> : object (optional): a ListDefinition</p>
-<p>The minimal compiled ink story : (corresponding to an empty file)</p>
-<pre><code class="language-json">{
- &quot;inkVersion&quot;:20,
- &quot;root&quot;:[[[&quot;done&quot;,{&quot;#n&quot;:&quot;g-0&quot;}],null],&quot;done&quot;,null],
- &quot;listDefs&quot;:{}
-}
-</code></pre></div>
+<h1 id="lists">Lists</h1>
+<h2 id="using-list-listitem-in-clients">Using <code>List</code> &amp; <code>ListItem</code> in clients</h2>
+<p>List &amp; List items are available for a game engine to interact with. In order to facilitate this, the <code>GetHashCode</code> method is provided.<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
+<h2 id="list"><code>List</code></h2>
+<p><code>GetHashCode</code>: returns an integer hashcode for a <code>List</code>, used for comparisons and dictionary use. The hashcode should take into account the <code>ListItem</code>s inside the <code>List</code></p>
+<h2 id="listitem"><code>ListItem</code></h2>
+<p><code>GetHashCode</code>: returns an integer hashcode for the <code>ListItem</code>. The hashcode should take into account the <code>itemName</code>, and the <code>originName</code> (if present).</p>
+<p>This method returns a Hashable representation of the <code>List</code> &amp; <code>ListItem</code>. The details of the hash are <em>platform-specific</em>; meaning that runtime engines can implement the method however works best for the programming language/ecosystem. However, the <code>GetHashCode</code> methods should return a hashcode calculated by </p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>See commit: <a href="https://github.com/inkle/ink/commit/b4ce27b70183c5466cb7a19a69e6bfcc075873db">https://github.com/inkle/ink/commit/b4ce27b70183c5466cb7a19a69e6bfcc075873db</a>&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div></div>
             </div>
         </div>
 

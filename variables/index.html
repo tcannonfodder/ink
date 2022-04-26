@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>Architecture - Ink Runtime Specification: 1.0.0</title>
+        <title>Variables - Ink Runtime Specification: 1.0.0</title>
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/font-awesome.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
@@ -36,12 +36,12 @@
                             <li class="navitem">
                                 <a href=".." class="nav-link">Ink Runtime Specification</a>
                             </li>
-                            <li class="dropdown active">
+                            <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">General Documentation <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="./" class="dropdown-item active">Architecture</a>
+    <a href="../architecture/" class="dropdown-item">Architecture</a>
 </li>
                                     
 <li>
@@ -49,7 +49,7 @@
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Components <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
@@ -62,7 +62,7 @@
 </li>
                                     
 <li>
-    <a href="../variables/" class="dropdown-item">Variables</a>
+    <a href="./" class="dropdown-item active">Variables</a>
 </li>
                                 </ul>
                             </li>
@@ -101,12 +101,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href=".." class="nav-link">
+                                <a rel="prev" href="../lists/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../glossary/" class="nav-link">
+                                <a rel="next" href="../state-saving-and-restoration/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -128,7 +128,7 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#architecture" class="nav-link">Architecture</a>
+            <li class="nav-item" data-level="1"><a href="#variables" class="nav-link">Variables</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -137,19 +137,8 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="architecture">Architecture</h1>
-<p><em>High-level explanation of the runtime architecture</em></p>
-<p>The general form of a compiled JSON story is an object that <em>must</em> contain :</p>
-<p><code>inkVersion</code> : number : the ink version number. Current version is <code>20</code>.</p>
-<p><code>root</code> : array : the main story <a href="../glossary/#container">Container</a></p>
-<p><code>listDef</code> : object (optional): a ListDefinition</p>
-<p>The minimal compiled ink story : (corresponding to an empty file)</p>
-<pre><code class="language-json">{
- &quot;inkVersion&quot;:20,
- &quot;root&quot;:[[[&quot;done&quot;,{&quot;#n&quot;:&quot;g-0&quot;}],null],&quot;done&quot;,null],
- &quot;listDefs&quot;:{}
-}
-</code></pre></div>
+<h1 id="variables">Variables</h1>
+<p><em>a reference to a slot in the evaluation stack. It may contains a Value, a StringValue or a Divert. It may be global or temporary.</em></p></div>
             </div>
         </div>
 

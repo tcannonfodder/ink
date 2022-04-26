@@ -34,19 +34,63 @@
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
                             <li class="navitem">
-                                <a href=".." class="nav-link">Welcome to MkDocs</a>
+                                <a href=".." class="nav-link">Ink Runtime Specification</a>
                             </li>
-                            <li class="navitem">
-                                <a href="../architecture/" class="nav-link">Architecture</a>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">General Documentation <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../architecture/" class="dropdown-item">Architecture</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active">Glossary</a>
+</li>
+                                </ul>
                             </li>
-                            <li class="navitem">
-                                <a href="../bytecode-reference/" class="nav-link">Compiled JSON reference</a>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Components <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../diverts/" class="dropdown-item">Runtime Diverts</a>
+</li>
+                                    
+<li>
+    <a href="../lists/" class="dropdown-item">Lists</a>
+</li>
+                                    
+<li>
+    <a href="../variables/" class="dropdown-item">Variables</a>
+</li>
+                                </ul>
                             </li>
-                            <li class="navitem active">
-                                <a href="./" class="nav-link">Glossary</a>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">In Action <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../state-saving-and-restoration/" class="dropdown-item">State Saving & Restoration</a>
+</li>
+                                    
+<li>
+    <a href="../native-functions/" class="dropdown-item">Native functions</a>
+</li>
+                                </ul>
                             </li>
-                            <li class="navitem">
-                                <a href="../state-saving-and-restoration/" class="nav-link">State Saving & Restoration</a>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Reference Tables <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../bytecode-reference/" class="dropdown-item">Compiled JSON reference</a>
+</li>
+                                    
+<li>
+    <a href="../control-commands/" class="dropdown-item">Control Commands</a>
+</li>
+                                </ul>
                             </li>
                         </ul>
 
@@ -57,12 +101,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../bytecode-reference/" class="nav-link">
+                                <a rel="prev" href="../architecture/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../state-saving-and-restoration/" class="nav-link">
+                                <a rel="next" href="../diverts/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -94,7 +138,57 @@
                     <div class="col-md-9" role="main">
 
 <h1 id="glossary">Glossary</h1>
-<p><em>A glossary of terms used by the runtime</em></p></div>
+<p><em>A glossary of terms used by the runtime</em></p>
+<ul>
+<li>
+<p><strong>Container</strong>
+: the base element of JSON compiled stories. A Container may be <strong>named</strong>. A Container may contain other Containers (named or anonymous).</p>
+</li>
+<li>
+<p><strong>Control Command</strong>
+: a built-in instruction destined to be read and executed by the interpreter. See <a href="../control-commands/">Control Commands</a></p>
+</li>
+<li>
+<p><strong>Choice Point</strong>
+: the generator for a single choice. Its content (text) and behaviour are defined at runtime</p>
+</li>
+<li>
+<p><strong>Divert</strong>
+: a generalisation of the divert concept found in ink source. See <a href="../diverts/">Type of Diverts</a></p>
+</li>
+<li>
+<p><strong>Glue</strong>
+: an invisible textual value akin to an unbreakable space</p>
+</li>
+<li>
+<p><strong>List</strong>
+: what exactly is a LIST is an open question fairly debated on the community discord.</p>
+</li>
+<li>
+<p><strong>List item</strong>
+: Lists "contain" List items.</p>
+</li>
+<li>
+<p><strong>Native Function Call</strong>
+: an operation performed internally on behalf of the interpreter. See <a href="../native-functions/">Native functions</a></p>
+</li>
+<li>
+<p><strong>StringValue</strong>
+: a textual value</p>
+</li>
+<li>
+<p><strong>Value</strong>
+: a integer, float or boolean value. In the context of a boolean operation, any non-zero value is considered truthy.</p>
+</li>
+<li>
+<p><strong>Variable</strong>
+: a reference to a slot in the evaluation stack. It may contains a Value, a StringValue or a Divert. It may be global or temporary. See <a href="../variables/">Variable Assignment</a></p>
+</li>
+<li>
+<p><strong>Void</strong>
+: a special Value returned by function calls that don't return anything</p>
+</li>
+</ul></div>
             </div>
         </div>
 

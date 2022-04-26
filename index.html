@@ -34,19 +34,63 @@
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
                             <li class="navitem active">
-                                <a href="." class="nav-link">Welcome to MkDocs</a>
+                                <a href="." class="nav-link">Ink Runtime Specification</a>
                             </li>
-                            <li class="navitem">
-                                <a href="architecture/" class="nav-link">Architecture</a>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">General Documentation <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="architecture/" class="dropdown-item">Architecture</a>
+</li>
+                                    
+<li>
+    <a href="glossary/" class="dropdown-item">Glossary</a>
+</li>
+                                </ul>
                             </li>
-                            <li class="navitem">
-                                <a href="bytecode-reference/" class="nav-link">Compiled JSON reference</a>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Components <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="diverts/" class="dropdown-item">Runtime Diverts</a>
+</li>
+                                    
+<li>
+    <a href="lists/" class="dropdown-item">Lists</a>
+</li>
+                                    
+<li>
+    <a href="variables/" class="dropdown-item">Variables</a>
+</li>
+                                </ul>
                             </li>
-                            <li class="navitem">
-                                <a href="glossary/" class="nav-link">Glossary</a>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">In Action <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="state-saving-and-restoration/" class="dropdown-item">State Saving & Restoration</a>
+</li>
+                                    
+<li>
+    <a href="native-functions/" class="dropdown-item">Native functions</a>
+</li>
+                                </ul>
                             </li>
-                            <li class="navitem">
-                                <a href="state-saving-and-restoration/" class="nav-link">State Saving & Restoration</a>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Reference Tables <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="bytecode-reference/" class="dropdown-item">Compiled JSON reference</a>
+</li>
+                                    
+<li>
+    <a href="control-commands/" class="dropdown-item">Control Commands</a>
+</li>
+                                </ul>
                             </li>
                         </ul>
 
@@ -84,13 +128,17 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#welcome-to-mkdocs" class="nav-link">Welcome to MkDocs</a>
+            <li class="nav-item" data-level="1"><a href="#ink-runtime-specification" class="nav-link">Ink Runtime Specification</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#commands" class="nav-link">Commands</a>
+            <li class="nav-item" data-level="2"><a href="#general-documentation" class="nav-link">General documentation</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#project-layout" class="nav-link">Project layout</a>
+            <li class="nav-item" data-level="2"><a href="#in-action" class="nav-link">In action</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#reference-tables" class="nav-link">Reference Tables</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -101,21 +149,25 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="welcome-to-mkdocs">Welcome to MkDocs</h1>
-<p>For full documentation visit <a href="https://www.mkdocs.org">mkdocs.org</a>.</p>
-<h2 id="commands">Commands</h2>
+<h1 id="ink-runtime-specification">Ink Runtime Specification</h1>
+<p><strong>Note: This version of the specification is based on version 1.0.0 of ink: https://github.com/inkle/ink/releases/tag/v1.0.0</strong></p>
+<p><em>Explanation how the runtime is structured</em></p>
+<h2 id="general-documentation">General documentation</h2>
 <ul>
-<li><code>mkdocs new [dir-name]</code> - Create a new project.</li>
-<li><code>mkdocs serve</code> - Start the live-reloading docs server.</li>
-<li><code>mkdocs build</code> - Build the documentation site.</li>
-<li><code>mkdocs -h</code> - Print help message and exit.</li>
+<li><a href="architecture">Architecture</a></li>
+<li><a href="glossary">Glossary</a></li>
 </ul>
-<h2 id="project-layout">Project layout</h2>
-<pre><code>mkdocs.yml    # The configuration file.
-docs/
-    index.md  # The documentation homepage.
-    ...       # Other markdown pages, images and other files.
-</code></pre></div>
+<h2 id="in-action">In action</h2>
+<ul>
+<li><a href="runtime-implementation">Runtime implementation</a></li>
+<li><a href="state-saving-and-restoration">State saving and restoration</a></li>
+</ul>
+<h2 id="reference-tables">Reference Tables</h2>
+<ul>
+<li><a href="bytecode-reference">ByteCode reference</a></li>
+<li><a href="native-functions">Native functions</a></li>
+<li><a href="control-commands">Control commands</a></li>
+</ul></div>
             </div>
         </div>
 
@@ -196,5 +248,5 @@ docs/
 
 <!--
 MkDocs version : 1.3.0
-Build Date UTC : 2022-04-26 02:39:04.527060+00:00
+Build Date UTC : 2022-04-26 17:55:03.073464+00:00
 -->
