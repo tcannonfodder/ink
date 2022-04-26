@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>Compiled JSON reference - Ink Runtime Specification: 1.0.0</title>
+        <title>Testing your runtime - Ink Runtime Specification: 1.0.0</title>
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/font-awesome.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
@@ -36,7 +36,7 @@
                             <li class="navitem">
                                 <a href=".." class="nav-link">Ink Runtime Specification</a>
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">General Documentation <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
@@ -49,7 +49,7 @@
 </li>
                                     
 <li>
-    <a href="../testing/" class="dropdown-item">Testing your runtime</a>
+    <a href="./" class="dropdown-item active">Testing your runtime</a>
 </li>
                                 </ul>
                             </li>
@@ -83,12 +83,12 @@
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown active">
+                            <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Reference Tables <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="./" class="dropdown-item active">Compiled JSON reference</a>
+    <a href="../bytecode-reference/" class="dropdown-item">Compiled JSON reference</a>
 </li>
                                     
 <li>
@@ -105,12 +105,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../native-functions/" class="nav-link">
+                                <a rel="prev" href="../glossary/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../control-commands/" class="nav-link">
+                                <a rel="next" href="../diverts/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -132,7 +132,7 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#compiled-json-reference" class="nav-link">Compiled JSON reference</a>
+            <li class="nav-item" data-level="1"><a href="#testing-your-runtime" class="nav-link">Testing your runtime</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -141,23 +141,8 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="compiled-json-reference">Compiled JSON reference</h1>
-<p><em>Glossary &amp; Examples of each type of object &amp; instructions the ink compiler will generate</em></p>
-<p>The <a href="../architecture/">root container</a> should be parsed as a tree and each element interpreted as follow : (see <a href="../glossary/">Glossary</a> for definitions)</p>
-<ul>
-<li>any number or boolean is a <strong>Value</strong>.</li>
-<li>any string that begins with a <code>^</code> is a <strong>StringValue</strong>. The initial <code>^</code> should be ignored.</li>
-<li>the special string <code>&lt;&gt;</code> is a <strong>Glue</strong>.</li>
-<li>strings matching exactly a <strong>Control Command</strong> is such.</li>
-<li>strings matching exactly a <strong>Native Function Call</strong> is such.<ul>
-<li>Exception : <code>L^</code> matches <code>^</code> (list intersect/has operation)</li>
-</ul>
-</li>
-<li><code>"void"</code> is the special Value <strong>Void</strong></li>
-<li><strong>TODO</strong> : named/flagged content</li>
-<li>any array is a <strong>Container</strong> to be parsed recursively.</li>
-<li>any <code>null</code> is kept as is.</li>
-</ul></div>
+<h1 id="testing-your-runtime">Testing your runtime</h1>
+<p>The community standard for testing a runtime is to use <a href="https://github.com/chromy/ink-proof"><code>chromy/ink-proof</code></a>. This tool provides conformance testing for ink runtimes through an easy-to-use web interface &amp; shim structure.</p></div>
             </div>
         </div>
 
