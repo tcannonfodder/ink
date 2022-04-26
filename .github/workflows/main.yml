@@ -32,7 +32,7 @@ jobs:
         uses: pengx17/logseq-publish@v0.1
         with:
           # export source
-          src: ${{ $GITHUB_WORKSPACE }}/Documentation/runtime-specification # default is 
+          src: ${{ github.workspace }}/Documentation/runtime-specification # default is 
           # export destination
           dest: public # default is www
           # Logseq version to use. Note, not all version are supported. Use "master" if you are not sure what to put here
