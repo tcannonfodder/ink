@@ -134,6 +134,10 @@
             
             <li class="nav-item" data-level="1"><a href="#architecture" class="nav-link">Architecture</a>
               <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#architecture-diagram" class="nav-link">Architecture Diagram</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -143,6 +147,9 @@
 
 <h1 id="architecture">Architecture</h1>
 <p><em>High-level explanation of the runtime architecture</em></p>
+<h2 id="architecture-diagram">Architecture Diagram</h2>
+<p>Below is a high-level diagram of how the overall Ink architecture operates, and the scope your runtime implementation covers:</p>
+<p><img src="/assets/Architecture.png"></p>
 <p>The general form of a compiled JSON story is an object that <em>must</em> contain :</p>
 <p><code>inkVersion</code> : number : the ink version number. Current version is <code>20</code>.</p>
 <p><code>root</code> : array : the main story <a href="../glossary/#container">Container</a></p>
