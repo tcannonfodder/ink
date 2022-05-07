@@ -134,19 +134,7 @@
             
             <li class="nav-item" data-level="1"><a href="#native-functions" class="nav-link">Native functions</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#number-operations" class="nav-link">Number Operations</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#boolean-operations" class="nav-link">Boolean Operations</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#string-operations" class="nav-link">String Operations</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#list-operations" class="nav-link">List Operations</a>
+            <li class="nav-item" data-level="2"><a href="#list-of-all-native-functions" class="nav-link">List of all native functions</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -159,89 +147,225 @@
 
 <h1 id="native-functions">Native functions</h1>
 <p><em>Functions call performed internally on behalf of the interpreter</em></p>
-<h2 id="number-operations">Number Operations</h2>
-<h3 id="binary-operations">Binary operations</h3>
+<p>All function call <em>must</em> be implemented.</p>
+<h2 id="list-of-all-native-functions">List of all native functions</h2>
+<p><em>the number between parenthesis is the function's arity (number of parameters)</em></p>
+<p><strong><code>+</code></strong> Add (2)</p>
 <ul>
-<li>Add</li>
-<li>Substract</li>
-<li>Multiply</li>
-<li>Divide</li>
-<li>Modulo</li>
+<li><strong>If both operands are numbers</strong>:<ul>
+<li>The return value is the sum. </li>
+</ul>
+</li>
+<li><strong>If both operands are booleans, or if a boolean is added to a number</strong>:<ul>
+<li><code>true</code> is converted to <code>1</code> and <code>false</code> to <code>0</code></li>
+<li>The return value is the sum.</li>
+</ul>
+</li>
+<li><strong>If one or both operands are strings</strong>: <ul>
+<li>The non-string operand is converted to its string representation (numbers as their decimal representation, <code>true</code> becomes <code>"true"</code> and <code>false</code> becomes <code>"false"</code>).</li>
+<li>The return value is the concatenation of both string.</li>
+</ul>
+</li>
+<li><strong>If one of the operands is a <code>List</code> or a <code>List Item</code></strong><ul>
+<li>It can't be mixed with non-list operands.</li>
+<li>All <code>List Item</code> operands are considered as a <code>List</code> with only their item.</li>
+<li>The return value is the union of both List.</li>
+</ul>
+</li>
+</ul>
+<p><strong><code>-</code></strong> Subtract (2)</p>
+<ul>
+<li><strong>If both operands are numbers</strong><ul>
+<li>The return value is the difference between the first and the second.  </li>
+</ul>
+</li>
+<li><strong>If both operands are booleans, or if a boolean is added to a number</strong>:<ul>
+<li><code>true</code> is converted to <code>1</code> and <code>false</code> to <code>0</code></li>
+<li>The return value is the difference between the first and the second operand.</li>
+</ul>
+</li>
+<li><strong>If one of the operands is a <code>List</code> or a <code>List Item</code></strong>:<ul>
+<li>It can't be mixed with non-list operands.</li>
+<li>All <code>List Item</code> operands are considered as a <code>List</code> with only their item. </li>
+<li>The return value is the first <code>List</code> with all element from the second removed.</li>
+</ul>
+</li>
+<li><strong>Subtract can't be applied to strings</strong></li>
+</ul>
+<p><strong><code>/</code></strong> Divide (2)</p>
+<ul>
 <li>
-<p>Power</p>
+<p><strong>If both operands are numbers</strong>:</p>
+<ul>
+<li>The return value is the division of the first by the second.  </li>
+<li>If one of the two operands is a <code>FLOAT</code>, the result is a <code>FLOAT</code>; otherwise if the two operands are <code>INT</code>, the result is an <code>INT</code>.<ul>
+<li>
+<p>Examples:</p>
+<p><code>{13 / 3} // 4
+{13 / 3.0} // 4.3333335</code></p>
+</li>
+</ul>
+</li>
+</ul>
 </li>
 <li>
-<p>Equal</p>
+<p><strong>If both operands are booleans, or if a boolean is added to a number:</strong></p>
+<ul>
+<li><code>true</code> is converted to <code>1</code> and <code>false</code> to <code>0</code></li>
+<li>The return value is the division of the first by the second operand.</li>
+</ul>
 </li>
-<li>Greater</li>
-<li>Less</li>
-<li>Greater Than Or Equal</li>
-<li>Less Than Or Equal</li>
+<li><strong>Dividing by zero causes a runtime error</strong>.</li>
+<li><strong>Divide can't be applied to string or Lists</strong></li>
+</ul>
+<p><strong><code>*</code></strong> Multiply (2)</p>
+<ul>
 <li>
-<p>Not Equal</p>
+<p><strong>If both operands are numbers</strong>:</p>
+<ul>
+<li>The return value is the multiplication of the first by the second.  </li>
+<li>If one of the two operands is a <code>FLOAT</code>, the result is a <code>FLOAT</code>; otherwise if the two operands are <code>INT</code>, the result is an <code>INT</code>.<ul>
+<li>
+<p>Examples:</p>
+<p><code>{13 / (3 * 1)} // 4
+{13 / (3 * 1.0)} // 4.3333335</code></p>
 </li>
-<li>
-<p>Max</p>
+</ul>
 </li>
-<li>Min</li>
 </ul>
-<h3 id="unary-operations">Unary operations</h3>
-<ul>
-<li>Negate</li>
-<li>Floor</li>
-<li>Ceil</li>
-<li>Cast to int</li>
-<li>Cast to float</li>
-</ul>
-<h2 id="boolean-operations">Boolean Operations</h2>
-<p><em>All boolean operation may be applied to number where any non-zero value is considered truthy</em></p>
-<h3 id="binary-operations_1">Binary operations</h3>
-<ul>
-<li>And</li>
-<li>Or</li>
-</ul>
-<h3 id="unary-operations_1">Unary operations</h3>
-<ul>
-<li>Not</li>
-</ul>
-<h2 id="string-operations">String Operations</h2>
-<h3 id="binary-operations_2">Binary operations</h3>
-<ul>
-<li>Add (Concat)</li>
-<li>Equal</li>
-<li>Not Equal</li>
-<li>Has</li>
-<li>Hasnt</li>
-</ul>
-<h2 id="list-operations">List Operations</h2>
-<h3 id="binary-operations_3">Binary operations</h3>
-<ul>
-<li>Add (flip on)</li>
-<li>Substract (flip off)</li>
-<li>Has (contains)</li>
-<li>Hasnt (does not contain)</li>
-<li>
-<p>Intersect</p>
 </li>
 <li>
-<p>Equal</p>
-</li>
-<li>Not Equal</li>
-<li>Greater (in the list sense)</li>
-<li>Less (in the list sense)</li>
-<li>Greater Than Or Equel (in the list sense)</li>
-<li>Less Than Or Equel (in the list sense)</li>
-</ul>
-<h3 id="unary-operations_2">Unary operations</h3>
+<p><strong>If both operands are booleans, or if a boolean is added to a number</strong>:</p>
 <ul>
-<li>Not (is empty)</li>
-<li>Invert</li>
-<li>All</li>
-<li>Smallest Item</li>
-<li>Largest Item</li>
-<li>Count</li>
-<li>Value (value of the largest item)</li>
-</ul></div>
+<li><code>true</code> is converted to <code>1</code> and <code>false</code> to <code>0</code></li>
+<li>The return value is the multiplication of the first by the second operand.</li>
+</ul>
+</li>
+<li><strong>Multiply can't be applied to string or Lists</strong></li>
+</ul>
+<p><strong><code>%</code></strong> Mod (2)</p>
+<ul>
+<li><strong>If both operands are numbers</strong>:<ul>
+<li>The return value is the rest of the euclidean division of the first by the second.</li>
+<li>If one of the two operands is a <code>FLOAT</code>, the result is a <code>FLOAT</code>; otherwise if the two operands are <code>INT</code>, the result is an <code>INT</code>.<ul>
+<li>Example:
+    <code>{13 mod 5} // 3</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>If both operands are booleans, or if a boolean is added to a number</strong>:<ul>
+<li><code>true</code> is converted to <code>1</code> and <code>false</code> to <code>0</code></li>
+<li>The return value is the rest of the euclidean division of the first by the second operand.</li>
+</ul>
+</li>
+<li><strong>Mod can't be applied to string or Lists</strong></li>
+</ul>
+<p><strong><code>_</code></strong> Negate (1)</p>
+<ul>
+<li><strong>If the operand is a number</strong>:<ul>
+<li>The return value is the opposite of it.</li>
+<li>If the operand is a <code>FLOAT</code>, the result is a <code>FLOAT</code>; otherwise if the operand is an <code>INT</code>, the result is an <code>INT</code>.</li>
+</ul>
+</li>
+<li><strong>If the operand is a boolean</strong>:<ul>
+<li><code>true</code> is converted to <code>1</code> and <code>false</code> to <code>0</code></li>
+<li>The return value is the opposite of it.</li>
+</ul>
+</li>
+<li><strong>Negate can't be applied to string or Lists</strong></li>
+</ul>
+<p><strong><code>==</code></strong> Equal (2)
+<strong><code>!=</code></strong> NotEquals (2)</p>
+<ul>
+<li><strong>If both operands are numbers</strong><ul>
+<li>The return value is a boolean representing whether the first equals the second.</li>
+</ul>
+</li>
+<li><strong>If both operands are booleans, or if a boolean is added to a number</strong>:<ul>
+<li><code>true</code> is converted to <code>1</code> and <code>false</code> to <code>0</code></li>
+<li>The return value is a boolean representing whether the first equals the second.</li>
+</ul>
+</li>
+<li><strong>If one or both operands are strings</strong>:<ul>
+<li>The non-string operand is converted to its string representation (numbers as their decimal representation, <code>true</code> becomes <code>"true"</code> and <code>false</code> becomes <code>"false"</code>)</li>
+<li>The return value is the equality between strings.</li>
+</ul>
+</li>
+<li><strong>If one of the operands is a <code>List</code> or a <code>List Item</code></strong>:<ul>
+<li>It can't be mixed with non-list operands.</li>
+<li>All <code>List Item</code> operands are considered as a <code>List</code> with only their item.</li>
+<li>The return value is a boolean that is true if and only if all elements from the first <code>List</code> are in the second <code>List</code> and all elements from the second <code>List</code> are in the first <code>List</code>.</li>
+</ul>
+</li>
+<li><strong><code>NotEquals</code> always returns the inverse of <code>Equals</code></strong></li>
+</ul>
+<p><strong><code>&gt;</code></strong> Greater (2)<br />
+<strong><code>&lt;</code></strong> Less (2)<br />
+<strong><code>&gt;=</code></strong> GreaterThanOrEquals (2)<br />
+<strong><code>&lt;=</code></strong> LessThanOrEquals (2)  </p>
+<ul>
+<li><strong>If both operands are numbers</strong><ul>
+<li>The return value is a boolean representing how the first compares to the second.  </li>
+</ul>
+</li>
+<li><strong>If both operands are booleans, or if a boolean is added to a number</strong>:<ul>
+<li><code>true</code> is converted to <code>1</code> and <code>false</code> to <code>0</code></li>
+<li>The return value is a boolean representing how the first compares to the second.</li>
+</ul>
+</li>
+<li><strong>Comparisons can't be applied to strings.</strong></li>
+<li><strong>If one of the operands is a <code>List</code> or a <code>List Item</code></strong><ul>
+<li>It can't be mixed with non-list operands.</li>
+<li>All <code>List Item</code> operands are considered as a <code>List</code> with only their item. </li>
+<li><code>&gt;</code> is true between <code>Lists</code> if the value of the smallest element of the first <code>List</code> is strictly greater than the value of the biggest element of the second <code>List</code>.</li>
+<li><code>&gt;=</code> is true between <code>Lists</code> if the value of the smallest element of the first <code>List</code> is greater or equal than the value of the smallest element of the second <code>List</code> <em>and</em> if the value of the biggest element of the first <code>List</code> is greater or equal than the value of the biggest element of the second <code>List</code>.</li>
+<li><code>&lt;</code> is true between <code>Lists</code> if the value of the biggest element of the first <code>List</code> is strictly less than the value the smallest element of the second <code>List</code>.</li>
+<li><code>&lt;=</code> is true between <code>Lists</code> if the value of the biggest element of the first <code>List</code> is less or equal than the value of the biggest element of the second <code>List</code> <em>and</em> if the value of the smallest element of the first <code>List</code> is less or equal than the value of the smallest element of the second <code>List</code>.</li>
+</ul>
+</li>
+</ul>
+<p><strong><code>!</code></strong> Not (1)</p>
+<ul>
+<li><strong>If the operand is a number</strong>:<ul>
+<li>Returns <code>true</code> if its value is not zero.</li>
+</ul>
+</li>
+<li><strong>If the operand is a boolean</strong><ul>
+<li>Returns the opposite.</li>
+</ul>
+</li>
+<li><strong>If the operand is a <code>List</code></strong>:<ul>
+<li>Returns <code>true</code> if its count is not 0.</li>
+</ul>
+</li>
+<li><strong><code>Not</code> can't be applied to strings.</strong></li>
+</ul>
+<p><strong><code>&amp;&amp;</code></strong> And (2)<br />
+<strong><code>||</code></strong> Or (2)</p>
+<ul>
+<li>All non-boolean operands are first converted to boolean<ul>
+<li>non-zero number, non-empty <code>Lists</code> and non-empty strings are converted to <code>true</code> otherwise to <code>false</code></li>
+</ul>
+</li>
+<li>The return value is the result of the boolean.</li>
+</ul>
+<p><strong><code>MIN</code></strong> Min (2)
+<strong><code>MAX</code></strong> Max (2)</p>
+<p><strong><code>POW</code></strong> Pow (2)</p>
+<p><strong><code>FLOOR</code></strong> Floor (1)</p>
+<p><strong><code>CEILING</code></strong> Ceiling (1)</p>
+<p><strong><code>INT</code></strong> Int (1)</p>
+<p><strong><code>FLOAT</code></strong> Float (1)</p>
+<p><strong><code>?</code></strong> Has (2)</p>
+<p><strong><code>!?</code></strong> Hasn't (2)</p>
+<p><strong><code>L^</code></strong> or <strong><code>^</code></strong> Intersect (2)</p>
+<p><strong><code>LIST_MIN</code></strong> ListMin (1)</p>
+<p><strong><code>LIST_MAX</code></strong> ListMax (1)</p>
+<p><strong><code>LIST_ALL</code></strong> All items (1)</p>
+<p><strong><code>LIST_COUNT</code></strong> Count (1)</p>
+<p><strong><code>LIST_VALUE</code></strong> ValueOfList (1)</p>
+<p><strong><code>LIST_INVERT</code></strong> Invert (1)</p></div>
             </div>
         </div>
 
